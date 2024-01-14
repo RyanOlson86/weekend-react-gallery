@@ -6,7 +6,6 @@ const pool = require('../modules/pool.js')
 router.put("/like/:id", (req, res) => {
   const queryText =`UPDATE "gallery" SET likes= likes + 1 WHERE id=$1;`
   const queryParams = [req.params.id]
-  console.log(queryParams)
 
   pool
     .query(queryText, queryParams)
@@ -23,8 +22,7 @@ router.put("/like/:id", (req, res) => {
 
 // GET /gallery
 router.get("/", (req, res) => {
-  console.log('in GET')
-  const queryText = `SELECT * FROM "gallery";`;
+  const queryText = `SELECT * FROM "gallery"`;
   pool
     .query(queryText)
     .then((result) => {

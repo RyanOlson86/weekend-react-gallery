@@ -14,7 +14,8 @@ function App() {
   const renderImages = ()=>{
     axios.get('/api/gallery')
     .then(response => {
-      setGalleryItems(response.data);
+      const newArray = response.data.sort((a, b) => a.id - b.id)
+      setGalleryItems(newArray);
     })
     .catch(error => {
       console.log('Error in GET', error)
@@ -22,12 +23,10 @@ function App() {
   }
 
   return (
-    <div data-testid="app">
-      <header>
+    <div data-testid="app" className="header">
+      <header >
         <h1>React Gallery</h1>
       </header>
-
-      <p>The gallery goes here!</p>
       <GalleryList galleryItems={galleryItems} renderImages={renderImages}/>
     </div>
   );
