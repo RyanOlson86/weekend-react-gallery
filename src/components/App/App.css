@@ -1,10 +1,16 @@
 img {
-    height: 100px; 
+    height: 150px; 
     margin: 0px;
 }
 
 body {
     margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    text-align: center;
 }
 
 .img-button {
@@ -14,21 +20,36 @@ body {
 }
 
 .description {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
 }
 
 .like-btn {
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .img-title {
     margin: 0px;
+    text-align: center;
 }
 
 .gallery-item {
     display: flex;
-    flex-direction: column;
+    margin: 20px;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 2px black;
+}
+
+.galleryList {
+    display: inline-flex;
+}
+
+.likes {
+    margin: 5px;
 }

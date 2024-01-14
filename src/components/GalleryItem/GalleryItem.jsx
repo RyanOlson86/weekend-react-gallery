@@ -22,7 +22,6 @@ const GalleryItem = ({image, renderImages}) => {
     }
 
     const handleLike = ()=>{
-        console.log(event.target.id);
         axios.put(`/api/gallery/like/${event.target.id}`)
         .then(response => {
           renderImages()
@@ -39,7 +38,7 @@ const GalleryItem = ({image, renderImages}) => {
             </button>
             <p className="img-title">{image.title}</p>
             <button className="like-btn" onClick={handleLike} id={image.id} data-testid="like">Like</button>
-            <p>{image.likes} people like this!</p>
+            <p className="likes">{image.likes} people like this!</p>
         </div>
         
     )
