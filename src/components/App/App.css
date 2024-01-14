@@ -1,0 +1,34 @@
+img {
+    height: 100px; 
+    margin: 0px;
+}
+
+body {
+    margin: 20px;
+}
+
+.img-button {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.description {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.like-btn {
+    margin-bottom: 10px;
+}
+
+.img-title {
+    margin: 0px;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
