@@ -34,4 +34,22 @@ router.get("/", (req, res) => {
     });
 });
 
+// POST /gallery
+router.post("/", (req, res) => {
+  const queryText = `INSERT INTO "gallery" 
+  ("url", "title", "description")
+  VALUES
+  ($1, $2, $3)`;
+  const queryParams = [req.body.url, req.body.title, req.body.description]
+  pool
+    .query(queryText, queryParams)
+    .then((result) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
