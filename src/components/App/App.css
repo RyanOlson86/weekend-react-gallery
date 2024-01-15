@@ -8,7 +8,7 @@
 }
 
 img {
-    height: 150px; 
+    height: 200px; 
     margin: 0px;
 }
 
@@ -68,8 +68,8 @@ form div input{
 }
 
 .description {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -104,4 +104,10 @@ form div input{
 
 .likes {
     margin: 5px;
+}
+
+.del-btn {
+    position: relative;
+    left: 41%;
+    bottom: 3px;
 }
