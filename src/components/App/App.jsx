@@ -15,6 +15,7 @@ function App() {
   const renderImages = ()=>{
     axios.get('/api/gallery')
     .then(response => {
+      console.log(response.data)
       const newArray = response.data.sort((a, b) => a.id - b.id)
       setGalleryItems(newArray);
     })

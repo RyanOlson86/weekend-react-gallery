@@ -16,6 +16,7 @@ const GalleryForm = ({renderImages}) => {
             url: urlInput
         })
         .then(response => {
+            console.log(response)
             renderImages();
             setTitleInput('');
             setDescInput('');
