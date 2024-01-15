@@ -1,8 +1,9 @@
 import { useState } from "react"
 import axios from "axios";
 
-const GalleryItem = ({image, renderImages}) => {
+const GalleryItem = ({image}) => {
     const [toggleState, setToggleState] = useState(false)
+    const [likeState, setLikeState] = useState(image.likes)
 
     const RenderItem = () => {
         if(toggleState){
@@ -24,7 +25,8 @@ const GalleryItem = ({image, renderImages}) => {
     const handleLike = ()=>{
         axios.put(`/api/gallery/like/${event.target.id}`)
         .then(response => {
-          renderImages()
+            console.log(response)
+          setLikeState(likeState + 1)
         })
         .catch(error => {
           console.log('Error in GET', error)
@@ -38,7 +40,7 @@ const GalleryItem = ({image, renderImages}) => {
             </button>
             <p className="img-title">{image.title}</p>
             <button className="like-btn" onClick={handleLike} id={image.id} data-testid="like">Like</button>
-            <p className="likes">{image.likes} people like this!</p>
+            <p className="likes">{likeState} people like this!</p>
         </div>
         
     )

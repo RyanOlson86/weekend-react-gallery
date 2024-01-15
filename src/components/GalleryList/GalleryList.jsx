@@ -1,6 +1,6 @@
 import GalleryItem from "../GalleryItem/GalleryItem"
 
-const GalleryList = ({galleryItems, renderImages}) => {
+const GalleryList = ({galleryItems}) => {
 
     return (
         <div data-testid="galleryList" className="galleryList" >
@@ -8,7 +8,6 @@ const GalleryList = ({galleryItems, renderImages}) => {
             <GalleryItem 
                 image={image} 
                 key={image.id}
-                renderImages={renderImages}
                 />
             ))}
         </div>

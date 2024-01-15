@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from 'axios'
-import { render } from "react-dom";
 
 const GalleryForm = ({renderImages}) => {
     const [titleInput, setTitleInput] = useState('')
@@ -16,6 +15,7 @@ const GalleryForm = ({renderImages}) => {
             url: urlInput
         })
         .then(response => {
+            console.log(response)
             renderImages();
             setTitleInput('');
             setDescInput('');

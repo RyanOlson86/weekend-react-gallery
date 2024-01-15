@@ -24,12 +24,12 @@ function App() {
   }
 
   return (
-    <div data-testid="app" >
+    <div data-testid="app" className="app">
       <header className="header">
         <h1>React Gallery</h1>
       </header>
       <GalleryForm renderImages={renderImages}/>
-      <GalleryList galleryItems={galleryItems} renderImages={renderImages}/>
+      <GalleryList galleryItems={galleryItems} />
     </div>
   );
 }
