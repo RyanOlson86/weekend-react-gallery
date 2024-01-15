@@ -26,7 +26,6 @@ const GalleryItem = ({image}) => {
     const handleLike = ()=>{
         axios.put(`/api/gallery/like/${event.target.id}`)
         .then(response => {
-            console.log(response)
           setLikeState(likeState + 1)
         })
         .catch(error => {
@@ -35,8 +34,6 @@ const GalleryItem = ({image}) => {
       }
 
     const handleDelete = () => {
-        console.log('delete clicked', event.target.id)
-
         axios.delete(`/api/gallery/${event.target.id}`)
         .then((response) => {
             setDisplayState(false)
