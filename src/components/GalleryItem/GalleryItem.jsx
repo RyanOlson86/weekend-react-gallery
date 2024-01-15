@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
 
-const GalleryItem = ({image, renderImages}) => {
+const GalleryItem = ({image}) => {
     const [toggleState, setToggleState] = useState(false)
     const [likeState, setLikeState] = useState(image.likes)
 

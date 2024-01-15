@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from 'axios'
-import { render } from "react-dom";
 
 const GalleryForm = ({renderImages}) => {
     const [titleInput, setTitleInput] = useState('')

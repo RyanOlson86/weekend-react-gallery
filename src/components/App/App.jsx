@@ -15,7 +15,6 @@ function App() {
   const renderImages = ()=>{
     axios.get('/api/gallery')
     .then(response => {
-      console.log(response.data)
       const newArray = response.data.sort((a, b) => a.id - b.id)
       setGalleryItems(newArray);
     })
@@ -25,12 +24,12 @@ function App() {
   }
 
   return (
-    <div data-testid="app" >
+    <div data-testid="app" className="app">
       <header className="header">
         <h1>React Gallery</h1>
       </header>
       <GalleryForm renderImages={renderImages}/>
-      <GalleryList galleryItems={galleryItems} renderImages={renderImages}/>
+      <GalleryList galleryItems={galleryItems} />
     </div>
   );
 }
